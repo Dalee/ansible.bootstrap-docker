@@ -1,0 +1,14 @@
+#
+- name: bootstrap - mandatory software
+  apt:
+    name: "{{ item }}"
+    state: "present"
+  with_items:
+    - "mc"
+    - "nano"
+    - "vim"
+    - "strace"
+    - "zip"
+    - "unzip"
+    - "make"
+  when: ansible_distribution == "Ubuntu"

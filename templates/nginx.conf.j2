@@ -1,0 +1,49 @@
+daemon off;
+user nobody nogroup;
+pid "/var/run/nginx.pid";
+error_log stderr notice;
+
+worker_processes auto;
+events {
+	use epoll;
+	worker_connections 1024;
+	multi_accept on;
+}
+
+http {
+	error_log stderr notice;
+	access_log off;
+
+	sendfile on;
+	keepalive_timeout 10;
+
+	default_type application/octet-stream;
+	gzip on;
+	gzip_min_length 1000;
+    gzip_types
+		text/html
+		text/css
+		text/plain
+		text/xml
+		application/x-javascript
+		application/javascript
+		text/javascript
+		application/json
+		application/xml
+		application/vnd.ms-fontobject
+		application/x-font-opentype
+		application/x-font-truetype
+		application/x-font-ttf
+		font/eot font/opentype font/otf
+		image/svg+xml
+		image/vnd.microsoft.icon;
+
+	proxy_cache_path "/var/nginx/cache"
+		levels=1:2
+		keys_zone=STATIC:10m
+		inactive=24h
+		max_size=512m;
+
+	include "/etc/nginx/mime.types";
+	include "/etc/nginx/virtuals/*.conf";
+}
