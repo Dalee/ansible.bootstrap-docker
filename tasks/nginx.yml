@@ -24,6 +24,14 @@
     owner: "root"
     group: "root"
 
+- name: nginx - create cache directory
+  file:
+    path: "/var/cache/nginx"
+    state: "directory"
+    mode: 0755
+    owner: "nobody"
+    group: "nogroup"
+
 - name: nginx - main configuration file
   template:
     src: "nginx.conf.j2"
