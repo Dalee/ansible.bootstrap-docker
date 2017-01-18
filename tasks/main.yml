@@ -1,5 +1,6 @@
 #
-- include: cleanup.yml
+- include: timezone.yml
 - include: tools.yml
 - include: nginx.yml
+- include: cleanup.yml
 

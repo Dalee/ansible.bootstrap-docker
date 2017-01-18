@@ -1,0 +1,7 @@
+#
+- name: timezone - set Europe/Moscow as default timezone
+  file:
+    name: "/etc/localtime"
+    src: "/usr/share/zoneinfo/Europe/Moscow"
+    state: "link"
+    force: "yes"

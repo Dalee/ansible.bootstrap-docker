@@ -11,4 +11,3 @@
     - "zip"
     - "unzip"
     - "make"
-  when: ansible_distribution == "Ubuntu"
