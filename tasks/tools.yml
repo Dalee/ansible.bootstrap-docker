@@ -6,8 +6,6 @@
   with_items:
     - "mc"
     - "nano"
-    - "vim"
     - "strace"
-    - "zip"
-    - "unzip"
     - "make"
+    - "telnet"
