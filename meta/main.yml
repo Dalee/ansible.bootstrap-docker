@@ -2,12 +2,12 @@ galaxy_info:
   author: "Dalee Dev"
   company: Dalee
   license: BSD
-  description: "Bootstrap docker machine, install nginx, some tools and uninstall crap"
-  min_ansible_version: 1.4
+  description: "Bootstrap docker environment"
+  min_ansible_version: 1.8
   platforms:
    - name: Ubuntu
      versions:
-      - trusty
+      - xenial
   categories:
    - system
 dependencies: []
