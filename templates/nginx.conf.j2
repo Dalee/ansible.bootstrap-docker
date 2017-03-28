@@ -3,7 +3,7 @@ user nobody nogroup;
 pid "/var/run/nginx.pid";
 error_log stderr notice;
 
-worker_processes 1;
+worker_processes {{ nginx_workers|default(1) }};
 events {
 	use epoll;
 	worker_connections 1024;

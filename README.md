@@ -1,4 +1,4 @@
-Uninstall some crap, install base software. 
-Ansible provision script should define variable:
+# Bootstrap Docker environment
 
- * project_root - application path withing docker, usually /app
+ * `project_root` - mandatory, application root path, usually: `/app`
+ * `nginx_workers` - number of nginx workers, default is `1`
